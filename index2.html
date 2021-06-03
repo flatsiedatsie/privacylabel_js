@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Privacylabel demo 2</title>
+    <script src="privacylabel_languages.js"></script>
+    <script src="privacylabel.js"></script>
+  </head>
+  <body>
+    <div id="privacylabel-container"></div>
+  </body>
+  <script type="text/javascript">
+    
+	//var userLang = navigator.language || navigator.userLanguage; 
+	//console.log("userlang from browser = " + userLang);
+
+
+    var label_data = {
+        "intro": {
+            "title": "Demo Enterprises",
+            "description": "This is how we collect and use data."
+        },
+        "collection": {
+            "receive_from_you": {
+                "aggregated_data": false,
+                "personal_data": true,
+                "sensitive_data": false,
+                "explanation": "If you fill in forms on our website, or if you create a contract with us, then we may receive personal information such as your contact details."
+            },
+            "receive_from_others": {
+                "aggregated_data": true,
+                "personal_data": true,
+                "sensitive_data": false,
+                "explanation": "Organisations that we work closely with may share data about you with us, in order to offer a seamless customer experience."
+            },
+            "observe": {
+                "aggregated_data": true,
+                "personal_data": true,
+                "sensitive_data": false
+            }
+        },
+        "location": {
+            "processed_outside_the_eu": {
+                "value": "some_data",
+                "explanation": "We make use of some services that operate out of the United States, such as Google Documents."
+            }
+        },
+        "duration": {
+            "most_data": {
+                "value": "1_year_or_less"
+            },
+            "some_data": {
+                "value": "1_month_or_less",
+                "explanation": "Our website only stores data for a short amount of time. We also delete secutity camera footage after two weeks."
+            },
+            "a_little_data": {
+                "value": "10_years_or_less",
+                "explanation": "Our financial administration is stored for 7 years. This may include your bank records."
+            }
+        },
+        "purpose": {
+            "providing_goods_and_services": [],
+            "education": {
+                "explanation": "We may store your personal data for our internal training purposes, for example when you call us on the phone.",
+                "url": "https:\/\/www.privacylabel.org\/learn\/"
+            },
+            "marketing_or_sales_or_customer_relations": {
+                "explanation": "We may upload data, such as a list of email addresses, to marketing services."
+            }
+        },
+        "legal": {
+            "consent": [],
+            "legal_obligation": [],
+            "legitimate_interests": []
+        },
+        "sharing": {
+            "processors": [],
+            "government": [],
+            "parent_or_daughter_or_sibling_organisation": [],
+            "third_parties": []
+        },
+        "action": {
+            "privacy_policy": "https:\/\/www.privacylabel.org",
+            "contact": "https:\/\/www.privacylabel.org"
+        },
+        "updated": {
+            "updated_year": "2021",
+            "updated_month": "02",
+            "updated_day": "09"
+        }
+    }
+    
+    
+	main_label = Privacylabel('privacylabel-container','en-uk');
+	
+	var main_label = Privacylabel('privacylabel-container','en-uk',label_data);
+	
+	main_label.setDebug(true);
+		
+	console.log( "main_label.getLanguage() = " + main_label.getLanguage() );
+	
+	main_label.generate();
+    
+    /*
+    
+    Next, we need to load language data. The privacylabel can automatically be translated into a number or languages.
+    
+    To get data on a specific language, you can query the privacylabel server if you like.
+    
+    JSON: https://www.privacylabel.org/languages/json/en-uk
+    
+    Aternatively, if there is a global variable called "privacylabel-languages" available, that can be used to load the languages.
+    JS: https://www.privacylabel.org/languages/js/en-uk
+    
+    To load all available languages, simply include https://www.privacylabel.org/languages/js/ 
+    
+    So you could simply do <script src="https://www.privacylabel.org/languages/js/" /> before you create the label to have all languages. That's what this example does.
+    
+    */
+    
+  </script>
+</html>

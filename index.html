@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Privacylabel demo 1</title>
+    <script src="privacylabel_languages.js"></script>
+    <script src="privacylabel.js"></script>
+  </head>
+  <body>
+    <div id="privacylabel-container"></div>
+  </body>
+  <script type="text/javascript">
+	
+	
+    var main_label = Privacylabel('privacylabel-container','en-uk');
+	
+    
+    /*
+    
+    Next, we need to load language data. The privacylabel can automatically be translated into a number or languages.
+    
+    To get data on a specific language, you can query the privacylabel server if you like.
+    
+    JSON: https://www.privacylabel.org/languages/json/en-uk
+    
+    Aternatively, if there is a global variable called "privacylabel-languages" available, that can be used to load the languages.
+    JS: https://www.privacylabel.org/languages/js/en-uk
+    
+    To load all available languages, simply include https://www.privacylabel.org/languages/js/ 
+    
+    So you could simply do <script src="https://www.privacylabel.org/languages/js/" /> before you create the label to have all languages.
+    
+    */
+    
+    //main_label.loadLanguageJson("https://www.privacylabel.org/languages/js/en-uk","en-uk");
+    main_label.loadShortCode("en-uk2YABOAB3F4ABCD5PMASF6TSL7PS210501Z-TU21hbGwgZXZlbnQ=-DV2hlbiB5b3UgdmlzaXQgb3VyIGV2ZW50LCB3ZSBtYXkgY29sbGVjdCBhbmQgdXNlIGRhdGEgdG8gaW1wcm92ZSBvdXIgc2VydmljZS4=");
+	//main_label.loadShortCode("en-uk2YABCRACOABTBCPAC3E4DBAC5UPRIHCSMAJEDF6LTSIVP7COPVGTAS200415Z-TRGVtbyBsYWJlbA==-DSGVyZSB5b3UgY2FuIGRlc2NyaWJlIGluIHNsaWdobHkgbW9yZSBkZXRhaWwgd2hhdCB0aGUgbGFiZWwgaXMgZm9yLiBJdCBtaWdodCBiZSBmb3IgYSB3ZWIgZm9ybSwgYSBjb21wYW55LCBvciBmb3IgaGlyaW5nIG1vcmUgZW1wbG95ZWVzLg==-RaHR0cHM6Ly93d3cucHJpdmFjeWxhYmVsLm9yZy9wb2xpY3k=-MaHR0cHM6Ly93d3cucHJpdmFjeWxhYmVsLm9yZy9wb2xpY3k=-CaHR0cHM6Ly93d3cucHJpdmFjeWxhYmVsLm9yZy9sZWFybi9jb250YWN0-EaW5mb0Bwcml2YWN5bGFiZWwub3Jn-PKzMxMTIzNDU2Nzg5");
+	main_label.generate();
+    
+  </script>
+</html>

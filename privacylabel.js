@@ -196,9 +196,11 @@
 				if(self.language == null){
 					try{
 						self.setLanguage(self.label_data['intro']['language']);
-						
 					}
-					catch(e){self.report("Error setting language. reverting to en-uk: " + e); self.language = 'en-uk';}
+					catch(e){
+                        self.report("Error setting language. reverting to en-uk: " + e); 
+                        self.language = 'en-uk';
+                    }
 				}
 				self.generatePrivacylabel(self);
 			}
@@ -824,6 +826,7 @@
 	
 	Privacylabel.init = function(desired_target, desired_language, desired_label_object) {
 		var self = this;
+        console.log("in privacylabel init");
         self.debug = true;
 		self.report("debug test");
 		self.target = 'privacylabel-container';
@@ -833,14 +836,16 @@
         self.embed_html = null;
 		self.allow_link_to_privacylabel_website = true;
 		self.desired_target = 'privacylabel-container';
-		self.translations = null;
+		self.translations = [];
 		self.label_data = null;
 		self.download_queue = 0;
 		
-
+        console.log(self.translations);
 		try {
-			self.translations = window.privacylabel_languages;
-			self.report("Loaded translations: " + JSON.stringify(self.translations));
+            if(window.privacylabel_languages != undefined){
+                self.translations = window.privacylabel_languages;
+                self.report("Loaded translations: " + JSON.stringify(self.translations));
+            }
 		} catch (e) {
 			self.report("Could not load translations data");
 		}
