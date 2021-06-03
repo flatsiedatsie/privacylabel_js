@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title></title>
+  </head>
+  <body>
+    <div id="privacylabel-container"></div>
+  </body>
+  <script type="text/javascript">
+	var userLang = navigator.language || navigator.userLanguage; 
+	console.log("userlang from browser = " + userLang);
+	window.main_label = Privacylabel('privacylabel-container',userLang);
+</script>
+</html>
