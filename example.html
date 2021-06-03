@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8"/>
-    <title></title>
+    <title>Privacylabel demo</title>
+    <script src="javascript.js"></script>
   </head>
   <body>
     <div id="privacylabel-container"></div>
@@ -10,6 +11,9 @@
   <script type="text/javascript">
 	var userLang = navigator.language || navigator.userLanguage; 
 	console.log("userlang from browser = " + userLang);
-	window.main_label = Privacylabel('privacylabel-container',userLang);
-</script>
+	main_label = Privacylabel('privacylabel-container',userLang);
+	  
+	main_label.loadShortCode("en2YABCRACOABTBCPAC3E4DBAC5UPRIHCSMAJEDF6LTSIVP7COPVGTAS200415Z-TRGVtbyBsYWJlbA==-DSGVyZSB5b3UgY2FuIGRlc2NyaWJlIGluIHNsaWdobHkgbW9yZSBkZXRhaWwgd2hhdCB0aGUgbGFiZWwgaXMgZm9yLiBJdCBtaWdodCBiZSBmb3IgYSB3ZWIgZm9ybSwgYSBjb21wYW55LCBvciBmb3IgaGlyaW5nIG1vcmUgZW1wbG95ZWVzLg==-RaHR0cHM6Ly93d3cucHJpdmFjeWxhYmVsLm9yZy9wb2xpY3k=-MaHR0cHM6Ly93d3cucHJpdmFjeWxhYmVsLm9yZy9wb2xpY3k=-CaHR0cHM6Ly93d3cucHJpdmFjeWxhYmVsLm9yZy9sZWFybi9jb250YWN0-EaW5mb0Bwcml2YWN5bGFiZWwub3Jn-PKzMxMTIzNDU2Nzg5");
+	  
+  </script>
 </html>
